@@ -1,0 +1,36 @@
+NUMPY
+
+    Creating and Manipulating NumPy Arrays
+        • Import NumPy
+        • Creating Arrays
+            • From a list
+            • Using built-in functions
+        • Manipulating Arrays
+            • Change shape
+            • Add dimensions
+
+    Basic Operations on Arrays
+        • Element-wise Operations
+        • Mathematical Operations
+
+    Array Indexing, Slicing, and Reshaping
+        • Indexing
+        • Slicing
+        • Reshaping
+
+    Broadcasting in NumPy
+        • Rules of Broadcasting
+            • Dimensions are aligned from the right
+            • A dimension is compatible if:
+                • It matches the other array’s dimension
+                • One of the dimensions is 1
+
+    Aggregation Functions
+        • Aggregation functions compute summary statistics for arrays
+
+    Random Number Generation and Setting Seeds
+        • Random Number Generation
+            • np.random
+        • Setting Random Seeds
+
+    
