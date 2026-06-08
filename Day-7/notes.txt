@@ -164,4 +164,46 @@
             • A low λ value allows the model to fit the training data more closely, increasing the risk of overfitting
         • Example Code for Lasso and Ridge Regression
 
+
+
+
+* CLASSIFICATION AND LOGISTIC REGRESSION *
+
+    Classification Problems and Common Use Cases
+        • What is Classification?
+            Predict discrete class label for an input
+        • Types of Classification
+            • Binary Classification
+            • Multi-Class Classification
+            • Multi-Label Classification
+        • Common Use Cases
+            • Healthcare | Finance | Retail | Natural Language Processing |Autonomous Systems
+
+    Logistic Regression for Binary Classification
+        • Equation
+            • Logistic regression applies the sigmoid function to a linear equation
+                P(y=1|x) = 𝜎(β0 + β1x1 +β2x2 +...+ βnxn)
+                • Where:
+                    • 𝑃 ( 𝑦 = 1 ∣ 𝑥 ): Probability of the positive class
+                    • 𝜎 ( 𝑧 ): Sigmoid function
+
+        • The Logistic Regression Model
+            • Sigmoid Function
+                • Maps the output to a range between 0 and 1
+                     𝜎(𝑧) = 1/(1 + e^(-z))
+                • If 𝑃 ( 𝑦 = 1 ∣ 𝑥 ) ≥ 0.5, the prediction is class 1; otherwise, it is class 0
+            • Decision Boundary
+                • The threshold (default is 0.5) used to classify instances
+                • Decision boundaries can be adjusted to optimize for precision or recall
+            • Interpretation of Coefficients:
+                • 𝛽0: Intercept, the baseline probability.
+                • 𝛽𝑖: Effect of feature 𝑥𝑖 on the log-odds of the positive class
+
         
+    Sigmoid Function, Decision Boundary, and Interpretation
+        • Sigmoid Function in Action
+            • The sigmoid function ensures outputs are interpretable as probabilities
+            • Visualization of the sigmoid function can illustrate how probabilities are mapped from raw model predictions
+        • Decision Boundary
+            • Default threshold is 0.5
+            • Adjusting the threshold can balance precision and recall depending on the use case
