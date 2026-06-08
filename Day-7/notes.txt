@@ -1,0 +1,167 @@
+* ML BASICS & TERMINOLOGY *
+
+    What is Machine Learning?
+
+        • Machine Learning
+            building systems that learn from data and improve peformance over time without explicit programming.
+
+        • Real-World Applications
+            • Healthcare
+            • Finance
+            • E-commerce
+            • Autonomous Vehicles
+            • Natural Language Processing
+
+    Types of Machine Learning
+
+        • Supervised Learning
+            • Model is trained on labeled data
+            • Model learns to map inputs (features) to outputs (target)
+            • Examples: Classification | Regression
+            • Key Features
+                • Requires labeled data
+                • Accuracy depends heavily on the quality of the training data
+
+        • Unsupervised Learning
+            • Model works on unlabeled data to find hidden patterns or structures
+            • Examples: Clustering | Dimensionality Reduction
+            • Key Features
+                • No labeled data is needed
+                • Focused on exploratory analysis and identifying patterns
+
+        • Reinforcement Learning
+            • An agent interacts with an environment and learns by trial and error to maximize cumulative rewards
+            • Examples: Robotics | Gaming | Dynamic Systems
+            • Key Features
+                • Goal-oriented learning based on rewards and penalties
+                • Suitable for sequential decision-making problems
+
+    Key Concepts
+
+        • Features
+            • The input variables (independent variables) used to train the model
+            • Example: In predicting house prices, features could include the number of bedrooms, size, and location
+        • Target
+            • The output variable (dependent variable) the model predicts
+            • Example: House price is the target variable
+        • Training and Testing Datasets
+            • The data is split into two subsets: Training Set | Testing Set
+            • A typical split is 80% training and 20% testing
+        • Overfitting
+            • Model learns noise and details in the training data, performing poorly on new data
+            • Model becomes too complex for the dataset
+        • Underfitting
+            • Model is too simple to capture the underlying patterns in the data
+            • Example: Fitting a linear model to non-linear data
+        • Bias-Variance Tradeoff
+            • Bias: The error introduced by assuming a simplified model
+            • Variance: Error introduced by the model's sensitivity to small changes in the training data
+            • Goal: Balance bias and variance to achieve optimal performance.
+
+
+
+
+
+* SUPERVISED LEARNING AND REGRESSION MODELS *
+
+    Introduction to Regression Analysis
+
+        • Linear Regression
+            • Assumes a linear relationship between the dependent variable (𝑦) and the independent variable (𝑥)
+            • Equation of a Line: y = β0 + β1x + ϵ
+                • β0: Intercept of the line
+                • β1: Slope of the line
+                • ϵ: Error term representing the difference between the observed and predicted values
+            • Steps in Linear Regression
+                • Fit the Model
+                • Predict
+                • Evaluate
+            • Applications of Regression Models
+                • Predicting Sales, Healthcare, Real Estate
+
+    Cost Function and Optimization in Linear Regression
+
+        Linear regression aims to minimize the error between the predicted and actual values of the target variable. This is achieved using a cost function
+
+        • Cost Function
+            • Measures how far the predictions are from the actual values
+            • Most common cost function is the Mean Squared Error (MSE)
+                J(β0,β1) = (1/m) sigma(i=1 to m) (yi-(β0 + β1xi))^2
+                • m: Number of data points
+                • 𝑦𝑖 : Actual value of the target for the 𝑖-th data point
+                • 𝛽0 + 𝛽1𝑥𝑖: Predicted value for the 𝑖 i-th data point
+            • Objective
+                • Minimize 𝐽 (𝛽0, 𝛽1) to find the best-fitting line
+
+
+        • Optimization with Gradient Descent
+            • Gradient Descent Algorithm
+                • Iteratively updates 𝛽0 and 𝛽1 to minimize the cost function
+                • Update Rule
+                        βj= βj - α(dJ/dβj)
+                        • α: Learning rate controlling the step size
+            • Convergence
+                • Algorithm stops when the updates become very small or a predefined number of iterations is reached
+        • Visualizing Optimization
+            • The optimization process can be visualized as finding the lowest point on a cost surface
+
+
+
+* POLYNOMIAL REGRESSION AND REGULARIZATION *
+
+    Polynomial Regression for Modeling Non-Linear Relationships
+
+        Polynomial regression is an extension of linear regression that models non-linear relationships by introducing higher-order terms of the input features.
+        
+        • What is Polynomial Regression?
+            • In a typical linear regression
+                 y = β0 + β1x + ϵ
+            • In polynomial regression, we extend this to include higher-degree terms
+                 y = β0 + β1x + β2x^2 + β3x^3 + ... βnx^n +  ϵ
+            • The inclusion of higher-order terms allows the model to capture non-linear patterns in the data.
+        • Steps in Polynomial Regression
+            1. Feature Transformation
+                • Create polynomial features from the original input data
+                • Example:𝑥→[𝑥,𝑥2,𝑥3]
+            2. Model Training
+                • Perform linear regression on the transformed features
+            3. Evaluation
+                • Assess the model's ability to capture the data's non-linear structure
+        • Advantages
+            • Captures non-linear relationships effectively
+        • Limitations
+            • Prone to overfitting with high-degree polynomials
+            • May require regularization to avoid overfitting
+        • Example Use Case: Predicting growth patterns in biological systems where relationships are non-linear
+
+
+    Introduction to Regularization Techniques: Lasso and Ridge Regression
+
+        • What is Regularization?
+            • Technique used to prevent overfitting by adding a penalty term to the cost function of a regression model
+
+        • Types of Regularization
+
+            • Ridge Regression (L2 Regularization)
+                • Adds the sum of the squared coefficients to the cost function
+                    J(β) = (1/n) sigma(i=1 to n) (yi - yi^)^2 + λ sigma(j=1 to p) βj^2
+                    • λ parameter controls the strength of the penalty
+
+            • Lasso Regression (L1 Regularization)
+                • Adds the sum of the absolute coefficients to the cost function
+                    J(β) = (1/n) sigma(i=1 to n) (yi - yi^)^2 + λ sigma(j=1 to p) |βj|
+                    • Encourages sparsity in the coefficients, effectively performing feature selection
+
+        • Key Differences
+            • Ridge shrinks coefficients but does not eliminate them
+            • Lasso can shrink some coefficients to zero, removing irrelevant features.
+
+    
+    Avoiding Overfitting with Regularization
+        • Regularization reduces the risk of overfitting by controlling the complexity of the model
+        • The regularization parameter λ (also called 𝛼 in some libraries) plays a critical role:
+            • A high λ value increases the penalty, forcing smaller coefficients and reducing overfitting
+            • A low λ value allows the model to fit the training data more closely, increasing the risk of overfitting
+        • Example Code for Lasso and Ridge Regression
+
+        
