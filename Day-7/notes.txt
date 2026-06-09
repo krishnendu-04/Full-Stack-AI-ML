@@ -207,3 +207,71 @@
         • Decision Boundary
             • Default threshold is 0.5
             • Adjusting the threshold can balance precision and recall depending on the use case
+
+
+
+
+* MODEL EVALUATION AND CROSS-VALIDATION *
+
+
+    Model Evaluation Metrics for Regression and Classification
+        • Model Evaluation for Regression
+            • Mean Squared Error (MSE)
+                • Measures the average squared difference between predicted and actual values
+                • Sensitive to outliers due to squaring of errors
+            • Mean Absolute Error (MAE)
+                • Measures the average absolute difference between predicted and actual values
+                • Provides a more interpretable measure but less sensitive to outliers
+            • Root Mean Squared Error (RMSE)
+                • Square root of MSE, providing errors in the same units as the target variable
+
+        • Model Evaluation for Classification
+            • Accuracy
+                • Proportion of correctly predicted instances
+                • Useful when the dataset is balanced
+            • Precision
+                • Fraction of positive predictions that are correct
+                • Important for applications like fraud detection, where false positives are costly
+            • Recall (Sensitivity)
+                • Fraction of actual positives that are correctly identified
+                • Useful in cases where missing positive instances is critical
+            • F1 Score
+                • Harmonic mean of precision and recall
+                • Balances precision and recall, especially useful for imbalanced datasets
+
+
+    Introduction to Cross-Validation
+        • Key Cross-Validation Techniques
+            • K-Fold Cross-Validation
+                • Splits the dataset into 𝐾 equal parts
+                • Trains the model on 𝐾 − 1 folds and tests on the remaining fold, repeating the process 𝐾 times
+                • The average of the 𝐾 test scores provides the final evaluation metric
+            • Stratified K-Fold
+                ures each fold has a proportional representation of classes in classification problems
+            • Leave-One-Out Cross-Validation (LOOCV)
+                • Trains the model on 𝑛 − 1 samples and tests on the remaining one. Repeated for all samples
+                • Computationally expensive for large datasets
+        • Advantages
+            • Reduces the risk of overfitting by testing on multiple subsets of data
+            • Provides a more generalized evaluation of model performance.
+
+
+    Understanding the Confusion Matrix
+        The confusion matrix is a table that summarizes the performance of a classification model by comparing predicted and actual values
+        • Structure of a Confusion Matrix
+
+                                Predicted positive          Predicted Negative
+
+            Actual Positive      True Positive (TP)         False Negative (FN)
+
+            Actual Negative      False Positive (FP)        True Negative (TN)
+
+        • Key Metrics Derived
+            • True Positive Rate (TPR)
+                • Same as recall
+            • False Positive Rate (FPR)
+                • Proportion of negatives incorrectly classified as positives
+            • Specificity
+                • Proportion of negatives correctly classified.
+
+                
