@@ -275,3 +275,49 @@
                 • Proportion of negatives correctly classified.
 
                 
+
+
+* K- NEAREST NEIGHBORS(KNN) ALGORITHM *
+
+    Introduction to k-Nearest Neighbors (k-NN)
+        Algorithm and Its Applications
+        • Key Characteristics
+            • Instance-Based Learning
+            • Distance Metric
+            • Classification
+            • Regression
+        • Applications
+            • Image Recognition
+            • Recommendation Systems
+            • Medical Diagnosis
+            • Customer Segmentation
+
+    How k-NN Works for Classification and Regression
+        • Step-by-Step Process
+            • Feature Scaling
+            • Calculate Distances
+            • Identify 𝑘 Nearest Neighbors
+            • Make Predictions
+                • Classification
+                • Regression
+
+    Choosing the Optimal Value of 𝑘
+        • Choosing 𝑘
+            • Small 𝑘
+                • High sensitivity to noise
+                • Captures local variations in data
+            • Large 𝑘
+                • Smoother decision boundaries but can miss finer details
+        • Common Practices
+            • Use cross-validation to determine the optimal value of 𝑘
+            • A common starting point is 𝑘 = √𝑛, where 𝑛 is the number of training samples
+
+    Understanding the Model’s Limitations
+        • Computationally Expensive
+            • Predictions require distance computation for all training samples
+        • Feature Scaling Dependence
+            • Requires proper scaling to avoid feature dominance
+        • Not Robust to Imbalanced Data
+            • Classes with more samples can dominate predictions
+
+    
