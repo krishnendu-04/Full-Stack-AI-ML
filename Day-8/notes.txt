@@ -48,3 +48,52 @@
         • Feature Selection
             • Reduces the number of input features to improve model performance
             • Techniques: Statistical Methods | Recursive Feature Elimination (RFE)
+
+
+
+
+
+
+* DATA SCALING AND NORMALIZATION *
+
+
+    What is Scaling and Normalization?
+        • Preprocessing techniques used to transform numerical features to a common range or distribution
+        • Why is Scaling and Normalization Important?
+            • Improves Algorithm Performance
+            • Ensures Fair Comparisons
+            • Stabilizes Training
+
+
+    Methods: Min-Max Scaling, Standardization (Z-Score Scaling)
+        • Min-Max Scaling
+            • Transforms features to a specified range, typically [0, 1]
+            • Ensures all feature values are within the same range
+            • Use Cases: 
+                k-NN or neural networks
+            • Limitations: 
+                Sensitive to outliers, as extreme values can distort the scale
+
+        • Standardization (Z-Score Scaling)
+            • Centers the data around zero and scales it to have a standard deviation of 1
+            • Ensures a standard normal distribution for each feature
+            • Use Cases: 
+                SVM, logistic regression, and PCA
+            • Advantages: 
+                Handles outliers better than Min-Max scaling
+
+
+    When to Use Scaling and Normalization for Different Algorithms
+
+        • Algorithms That Require Scaling
+            • Distance-Based Algorithms
+                • k-NN, SVM, K-Means clustering
+
+            • Gradient-Based Models
+                • Linear regression, logistic regression, and neural networks
+        
+        • Algorithms Less Sensitive to Scaling
+            • Tree-Based Models
+                • Decision Trees, Random Forests, Gradient Boosting
+
+
