@@ -97,3 +97,63 @@
                 • Decision Trees, Random Forests, Gradient Boosting
 
 
+
+
+* ENCODING CATEGORICAL VARIABLES *
+
+
+    One-Hot Encoding, Label Encoding
+        • What Are Categorical Variables?
+            • Binary Categorical Features: Gender (Male/Female)
+            • Multi-Class Categorical Features: Country (USA, Canada, UK).
+        • One-Hot Encoding
+            • Creates binary columns for each category in a categorical feature
+            • Each row is marked with a 1 for its respective category and 0 elsewhere
+            • Example: Feature: Color = ['Red', 'Blue', 'Green’]
+                    'Red'   'Blue'  'Green'
+                      1       0        0
+                      0       1        0
+                      0       0        1 
+            • Applications
+                • Categorical features with a small number of unique categories
+                • Tree-based models, logistic regression, and neural networks
+
+        • Label Encoding
+            • Label Encoding assigns a unique integer to each category
+            • Example: Red = 0, Blue = 1, Green = 2.
+            • Applications:
+                • Ordinal features where the order matters
+                • Can introduce unintended ordinal relationships for nominal features
+            • Limitations
+                • Can mislead algorithms into interpreting categories as ordered, especially when the variable is nominal
+
+    
+    Dealing with High-Cardinality Categorical Features
+        • High-cardinality categorical features contain a large number of unique categories
+        • Challenges
+            • Dimensionality
+            • Sparse Representation
+        • Solutions
+            • Frequency Encoding
+                • Replace categories with their occurrence frequency in the dataset
+                • Example: City = ['NY', 'LA', 'NY', 'SF', 'LA'] Encoded: NY = 2, LA = 2, SF = 1.
+            • Target Encoding
+                • Replace categories with the mean of the target variable for each category
+
+
+    When to Use Different Encoding Techniques
+
+    Encoding Technique              Use Case
+    One-Hot Encoding                Nominal features with small number of unique categories
+    Label Encoding                  Ordinal features or when used with algorithms like tree-based models
+    Frequency Encoding              High - cardinality features in both classification and regression task
+    Target Encoding                 High - cardinality features in supervised learning tasks
+
+
+
+
+* FEATURE SELECTION TECHNIQUES *
+
+
+
+    
