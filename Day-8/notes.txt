@@ -1,0 +1,50 @@
+* FEATURE ENGINEERING *
+
+    Importance of Feature Engineering in Machine Learning
+        • Process of transforming raw data into meaningful inputs for machine learning models
+        • Why is Feature Engineering Important?
+            • Improves Model Accuracy
+            • Reduces Model Complexity
+            • Enables Model Interpretability
+            • Handles Data Challenges
+        • Key Applications
+            • Finance | Healthcare | E-Commerce
+
+
+    Types of Features: Categorical, Numerical, Ordinal
+
+        • Categorical Features
+            • Represent discrete categories or labels
+            • Encoding Techniques
+                • One-Hot Encoding
+                • Label Encoding
+
+        • Numerical Features
+            • Represent continuous or discrete numbers
+            • Preprocessing Techniques
+                • Scaling
+
+        • Ordinal Features
+            • Represent categorical data with a meaningful order
+            • Encoding Techniques
+                • Ordinal Encoding
+
+
+
+    Overview of Feature Engineering Techniques
+
+        • Scaling
+            • Ensures all features contribute equally to the model
+            • Techniques: Min-Max Scaling | Standardization
+
+        • Encoding
+            • Converts categorical data into numerical format
+            • Techniques: One-Hot Encoding | Label Encoding
+
+        • Transformation
+            • Applies mathematical functions to modify features
+            • Examples: Log Transformation | Polynomial Features
+
+        • Feature Selection
+            • Reduces the number of input features to improve model performance
+            • Techniques: Statistical Methods | Recursive Feature Elimination (RFE)
