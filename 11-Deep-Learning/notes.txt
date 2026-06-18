@@ -63,3 +63,56 @@
             • Speech Processing
                 • Speech-to-text systems (e.g., virtual assistants)
                 • Voice recognition
+
+
+
+
+
+* FORWARD PROPOGATION AND ACTIVATION FUNCTIONS *
+
+
+
+    Understanding Forward Propagation
+        
+        • What is Forward Propagation?
+            • Process by which input data flows through the layers of a neural network to produce an output
+            • Input Layer
+                • Accepts input features and passes them to the next layer
+            • Hidden Layers functions
+                • Compute weighted sums of inputs, apply biases, and pass the result through activation
+            • Output Layer
+                • Produces predictions, typically using an activation function suitable for the task.
+
+
+        • Steps in Forward Propagation
+            • Compute Weighted Sum
+                • 𝑧 = 𝑊 ⋅ 𝑋 + 𝑏   ,    𝑊: Weights | 𝑋: Inputs | 𝑏: Bias
+            • Apply Activation Function
+                • 𝑎 = 𝜎 ( 𝑧 )     ,     σ: Activation function
+            • Repeat for Each Layer
+                • Outputs of one layer become inputs to the next.
+
+
+    
+    Common Activation Functions
+        • Sigmoid
+            • Use Case: Binary classification in the output layer
+            • Limitation: Can suffer from vanishing gradients for large positive/negative 𝑧
+        • Tanh (Hyperbolic Tangent)
+            • Use Case: Hidden layers where zero-centered outputs are preferred
+            • Limitation: Also prone to vanishing gradients
+        • ReLU (Rectified Linear Unit)
+            • Use Case: Most commonly used in hidden layers due to simplicity and efficiency
+            • Limitation: Can suffer from the "dying ReLU" problem (neurons stuck at zero)
+        • Softmax
+            • Use Case: Multi-class classification in the output layer
+
+
+
+    Choosing Activation Functions
+
+    Layer Type              Recommended Activation Function
+    Hidden Layers           ReLU or Tanh
+    Output(Binary)          Sigmoid
+    Output(Multi-Class)     Softmax
+    Output(Regression)      None or Linear
