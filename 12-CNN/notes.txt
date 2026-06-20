@@ -1,0 +1,42 @@
+* CONVOLUTION NEURAL NETWORKS *
+
+
+    Overview of CNNs and Their Role in Image Processing
+        
+        • What are Convolutional Neural Networks (CNNs)?
+            • Specialized type of neural network designed for processing structured grid data, such as images
+            • Particularly effective for image-related tasks like classification, object detection, and segmentation
+            • Why CNNs for Image Processing?
+                • Spatial Hierarchies
+                    • CNNs capture spatial and hierarchical patterns in images
+                    • Convolutional layers extract features like edges, textures, and complex structures
+                • Parameter Efficiency
+                    • Unlike fully connected networks, CNNs use fewer parameters due to shared weights, reducing computation and memory requirements
+
+
+    CNN Architecture
+        • Key Components of a CNN
+            • Convolutional Layers
+                • Perform convolution operations to extract features
+                • Kernel/Filter
+                    • A small matrix (e.g., 3x3) that slides over the input image to detect patterns
+                • Output
+                    • Feature maps highlighting specific patterns in the input
+            • Pooling Layers
+                • Downsample feature maps to reduce dimensions and computation
+                • Types
+                    • Max Pooling: Takes the maximum value in a region
+                    • Average Pooling: Takes the average value in a region
+            • Fully Connected Layers
+                • Combine extracted features for final predictions
+                • Act as a "classifier" in the network
+            • Basic CNN Workflow: Input Image → Convolution → Activation → Pooling → Fully Connected Layer → Output
+
+
+    Key Advantages of CNNs Over Fully Connected Networks for Images
+        • Translation Invariance
+            NNs can detect patterns irrespective of their position in the image
+        • Reduced Parameters
+            • Shared weights and local connectivity make CNNs computationally efficient
+        • Automatic Feature Extraction
+            • CNNs learn to identify meaningful patterns like edges, shapes, and textures directly from data
