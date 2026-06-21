@@ -123,3 +123,21 @@
         • This combination helps extract hierarchical features
             • Early layers focus on simple features (e.g., edges)
             • Deeper layers capture complex patterns (e.g., objects)
+
+
+
+
+
+
+* BUILDING CNN ARCHITECTURES WITH KERAS AND TENSORFLOW *
+
+
+
+    Building a CNN Architecture in Keras
+        • Steps to Build a CNN
+            • Convolutional Layers: Extract features from the input images
+            • Pooling Layers: Downsample feature maps to reduce dimensions and retain key features
+            • Dense (Fully Connected) Layers: Combine features for final predictions
+        • Basic CNN Architecture
+            • Input Layer → Convolutional Layer → Activation → Pooling → Fully Connected Layer → Output Layer
+            • Repeat convolution and pooling layers for deeper networks
