@@ -223,3 +223,51 @@
             
             • Learning Rate
                 • Adjust the learning rate to improve convergence speed and accuracy
+
+
+
+
+
+
+
+
+* REGULARIZATION AND DATA AUGMENTATION FOR CNNs *
+
+
+
+    Overfitting in CNNs and Methods to Prevent It
+        • What Is Overfitting?
+            • Occurs when a model performs well on the training data but fails to generalize to unseen data
+            • In CNNs, overfitting is common due to the large number of parameters in deep networks
+            • Methods to Prevent Overfitting
+                • Dropout
+                    • Randomly sets a fraction of neurons to zero during training
+                    • Prevents co-adaptation of neurons
+                    • Controlled by a dropout rate (e.g., 0.5)
+                • Batch Normalization
+                    • Normalizes the input of each layer to stabilize training
+                    • Reduces internal covariate shift and allows higher learning rates
+                • Data Augmentation
+                    • Increases dataset size artificially by applying transformations to images
+                    • Examples: rotation, flipping, scaling, cropping, brightness adjustment.
+
+
+
+
+    Introduction to Data Augmentation Techniques
+        • Common Techniques
+            • Rotation
+                • Rotates the image by a specified angle range (e.g., -30° to 30°)
+            • Flipping
+                • Horizontally or vertically flips the image
+            • Scaling
+                • Resizes the image by zooming in or out
+            • Cropping
+                • Extracts random portions of the image
+
+
+
+    Implementing Regularization and Data Augmentation in CNN Training
+        • Why Use Both?
+            • Regularization reduces the complexity of the model
+            • Data augmentation increases the diversity of the training data, improving generalization
