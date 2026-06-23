@@ -54,3 +54,65 @@
             • Understand spoken words and phrases
         • Video Frame Prediction
             • Anticipate future frames in video sequences
+
+
+
+
+
+*   RNN ARCHITECTURE AND BACKPROPOGATION THROUGH TIME (BPTT)    *
+
+
+
+    Detailed Architecture of RNNs
+        • Components of an RNN
+            
+            • Input Layer
+                • Takes sequential data as input at each time step
+            
+            • Hidden Layer
+                • Maintains a "memory" of past inputs through recurrent connections. The hidden state at time 𝑡(ℎ𝑡) is calculated as
+                    • ℎ𝑡 = 𝑓 ( 𝑊ℎ ⋅ ℎ𝑡−1 + 𝑊𝑥 ⋅ 𝑥𝑡 + 𝑏ℎ)
+                        • 𝑊ℎ : Weight matrix for recurrent connections
+                        • 𝑊𝑥 : Weight matrix for input connections
+                        • 𝑏ℎ : Bias term
+                        • 𝑓 : Non-linear activation function (e.g., tanh, ReLU)
+            
+            • Output Layer
+                • Produces output 𝑦𝑡 based on the hidden state ℎ𝑡
+                    • 𝑦𝑡 = 𝑔 ( 𝑊𝑦 ⋅ ℎ𝑡 + 𝑏𝑦 ) 
+                        • 𝑔: Activation function (e.g., softmax for classification)
+
+
+    Backpropagation Through Time (BPTT)
+        
+        • What is BPTT?
+            • Extension of standard backpropagation to handle sequential data in RNNs
+            • It calculates gradients for each time step and propagates them backward through the sequence
+            
+            • Steps of BPTT
+                • Unroll the RNN across the sequence for a fixed number of time steps
+                • Compute the loss for each time step
+                • Backpropagate the errors across all time steps to update weights
+            
+            • Challenges in BPTT
+                • Vanishing Gradient Problem
+                • Gradients diminish exponentially as they are propagated back through time
+                • Leads to difficulty in learning long-term dependencies
+                • Exploding Gradient Problem
+                • Gradients grow exponentially, causing numerical instability during training
+            
+            • Solutions
+                • Use gradient clipping to handle exploding gradients
+                • Use architectures like Long Short-Term Memory (LSTM) or Gated Recurrent Units (GRU) to mitigate the vanishing gradient problem
+
+
+
+    Limitations of Vanilla RNNs
+        • Short-Term Memory
+            • Struggle to learn dependencies in long sequences due to vanishing gradients
+        • Sequential Computation
+            • Cannot parallelize training across time steps, making them computationally expensive
+        • Sensitive Initialization
+            • Performance depends heavily on proper weight initialization and learning rates
+
+            
