@@ -116,3 +116,73 @@
             • Performance depends heavily on proper weight initialization and learning rates
 
             
+
+
+
+
+
+
+*   LONG SHORT TERM MEMORY (LSTM) NETWORKS  *
+
+
+
+    Introduction to LSTMs and How They Address RNN Limitations
+        
+        • What Are LSTMs?
+            • Type of Recurrent Neural Network (RNN) specifically designed to handle long-term dependencies
+            • LSTMs mitigate the vanishing gradient problem by using specialized gates to manage the flow of information
+            
+            • Key Features of LSTMs
+                • Memory Cells
+                    • Maintain a long-term memory state across sequences
+                
+                • Gated Mechanism
+                    • Regulates how much information to keep, update, or forget at each time step
+                
+                • Effective for Long Sequences
+                    • Handles sequential data with dependencies across many time steps.
+
+
+    • Advantages Over Vanilla RNNs
+        • Retains long-term dependencies
+        • Prevents gradient-related issues during training
+        • Outperforms RNNs on tasks like language modeling, speech recognition, and time-series forecasting
+
+
+    LSTM Cell Structure: Input, Forget, and Output Gates
+        • Forget Gate
+            • Decides what information to discard from the cell state
+                • ft = σ ( Wf . dot [ht-1, xt] + bf) 
+                    • Wf: Weight matrix for the forget gate
+                    • 𝑓𝑡: Forget gate output
+                    • 𝑥𝑡: Input
+                    • ℎ𝑡− 1 : Previous hidden state
+        
+        • Input Gate
+            • Decides what new information to add to the cell state
+                • it = σ (Wi ⋅ [ht−1, xt] + bi)
+                    • σ: Sigmoid activation function
+                    • 𝑊𝑖 : Weight matrix for the input gate
+                    • ℎ𝑡 − 1 : Hidden state from the previous time step
+                    • 𝑥𝑡 : Current input
+                    • 𝑏 𝑖: Bias for the input gate
+
+        • Cell State Update
+            • Combines the forget gate and input gate results to update the cell state
+                • Ct = ft . dot Ct-1 + it . dot Ct’
+        
+        • Output Gate
+            • Decides what information to output at each time step
+                • ot = σ (Wo ⋅ [ht−1 , xt ] + bo)
+                    • Wo: Weight matrix for the output gate
+                    • 𝑏𝑜 : Bias for the output gate
+
+    Applications of LSTMs
+        • Natural Language Processing (NLP)
+            • Sentiment analysis, machine translation, text generation
+        • Time-Series Forecasting
+            • Predicting stock prices, weather patterns, or sales trends
+        • Speech Recognition
+            • Converting spoken words into text
+        • Anomaly Detection
+            • Identifying unusual patterns in sequential data
