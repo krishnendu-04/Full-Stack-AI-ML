@@ -295,3 +295,77 @@
             • GloVe: Pre-trained on datasets like Wikipedia and Common Crawl
             • FastText: Handles out-of-vocabulary (OOV) words through subword embeddings
             • Embedding Layers in deep learning frameworks like TensorFlow and PyTorch
+
+
+
+
+
+*   SEQUENCE-TO-SEQUENCE MODELS AND APPLICATIONS  *
+
+
+    Sequence-to-Sequence (Seq2Seq) Models and Their Architecture
+        
+        • What Are Seq2Seq Models?
+            • Map an input sequence to an output sequence of different lengths
+            • Widely used for tasks like language translation, text summarization, speech-to-text, and chatbots
+            
+            • Architecture
+                • Encoder
+                    • Processes the input sequence and encodes it into a fixed-length vector (context vector)
+                • Decoder
+                    • Takes the context vector as input and generates the output sequence, step by step
+
+
+    Encoder-Decoder Framework for Seq2Seq Tasks
+        • How It Works
+            • Encoder
+                • Sequentially processes the input sequence using RNN, LSTM, or GRU
+                • Produces a context vector representing the entire input sequence
+            • Decoder
+                • Initializes its hidden state with the encoder's context vector
+                • Generates the output sequence one token at a time
+                • Predicts the next token using the previously generated tokens
+
+
+    Attention Mechanism Overview
+        • Why Attention?
+            • Standard Seq2Seq models compress the entire input sequence into a fixed-length vector, which can lead to information loss for long sequences
+            • Attention Mechanism dynamically focuses on different parts of the input sequence when generating each output token
+        • How Attention Works
+            • Calculates a weight (or score) for each input token based on its relevance to the current decoder state
+            • Outputs a weighted sum of the encoder outputs, creating a context vector for each decoder step
+
+
+    
+
+
+
+*   RNN PROJECT SENTIMENT ANALYSIS  *
+
+    
+    Applying RNN, LSTM, and GRU Models to a Complete Task
+        • Project Overview
+            • Choose a task: Sentiment Analysis
+                • Sentiment Analysis: Classify text into categories like positive or negative sentiment
+            • Use RNN, LSTM, or GRU models to solve the chosen task
+            • Focus on preprocessing, embedding integration, model architecture, and hyperparameter tuning
+
+
+    Analyzing Model Performance
+        • Key Metrics
+            • For Sentiment Analysis
+                • Accuracy, Precision, Recall, F1 Score
+        • Tuning Hyperparameters
+            • Embedding size
+            • Number of hidden units
+            • Learning rate and optimizer choice
+            • Sequence length and batch size
+
+
+    Experimenting with Architectures and Techniques
+        • Architectural Variations
+            • Single-Layer vs. Multi-Layer RNNs
+            • Bidirectional RNNs for improved context capture
+        • Preprocessing Techniques
+            • Tokenization, stemming, lemmatization
+            • Padding for sequence uniformity
