@@ -98,9 +98,9 @@ class Seq2Seq(nn.Module):
         
         for t in range(1, tgt_len):
             output, hidden, cell = self.decoder(input, hidden, cell)
-            outputs[:,t,:] = output
+            outputs[:, t, :] = output
             top1 = output.argmax(1)
-            input = tgt[:,t] if torch.rand(1).item() < teacher_forcing_ratio else top1
+            input = tgt[:, t] if torch.rand(1).item() < teacher_forcing_ratio else top1
         
         return outputs
     
@@ -128,23 +128,23 @@ def train(model, dataloader, optimizer, criterion, device, num_epochs=20):
             src, tgt = src.to(device), tgt.to(device)
             
             optimizer.zero_grad()
-            output = model(src,tgt)
+            output = model(src, tgt)
             
-            output = output[:,1:].reshape(-1, output.shape[2])
+            output = output[:, 1:].reshape(-1, output.shape[2])
             tgt = tgt[:, 1:].reshape(-1)
             
-            loss = criterion(output,tgt)
+            loss = criterion(output, tgt)
             loss.backward()
             optimizer.step()
             
             epoch_loss += loss.item()
             
-        print(f"Epoch {epoch+1}/{num_epochs}, Loss: {epoch_loss/len(dataloader):.4f}")
+        print(f"Epoch {epoch+1},/{num_epochs}, Loss: {epoch_loss/len(dataloader):.4f}")
         
         
 train(model, dataloader, optimizer, criterion, device)
 
-def translate_sentence(model, sentence, english_vocab, french_vocab, max_len_fr,device):
+def translate_sentence(model, sentence, english_vocab, french_vocab, max_len_french,device):
     model.eval()
     tokens = [english_vocab.get(word, english_vocab['<UNK>']) for word in sentence.split()]
     tokens = [english_vocab["<SOS>"]] + tokens + [english_vocab["<EOS>"]]
@@ -155,12 +155,12 @@ def translate_sentence(model, sentence, english_vocab, french_vocab, max_len_fr,
     
     tgt_vocab = {v:k for k,v in french_vocab.items()}
     tgt_indices = [french_vocab["<SOS>"]]
-    for _ in range(max_len_fr):
+    for _ in range(max_len_french):
         tgt_tensor = torch.tensor([tgt_indices[-1]]).to(device)
         output, hidden, cell = model.decoder(tgt_tensor,hidden,cell)
         pred = output.argmax(1).item()
         tgt_indices.append(pred)
-        if pred== french_vocab["<EOS>"]:
+        if pred == french_vocab["<EOS>"]:
             break
     
     translated_sentence = [tgt_vocab[i] for i in tgt_indices[1:-1]]
