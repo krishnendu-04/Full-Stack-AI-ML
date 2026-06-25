@@ -44,3 +44,10 @@ context_py = torch.matmul(attention_weights_py,values_py)
 
 print("Attention weights: \n",attention_weights_py)
 print("Context vector: \n",context_py)
+
+
+import matplotlib.pyplot as plt
+plt.matshow(attention_weights_py)
+plt.colorbar()
+plt.title("Attention Weights")
+plt.show()
