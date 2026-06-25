@@ -213,3 +213,65 @@
             • Another linear transformation
                     
                     𝐹𝐹𝑁 (𝑥) = ReLU ( 𝑥𝑊1 + 𝑏1 ) 𝑊2 + 𝑏2
+
+
+
+
+
+
+*   HANDS-ON WITH PRE-TRAINED TRANSFORMERS BERT AND GPT   *
+
+
+
+
+    Introduction to BERT and GPT
+        
+        • What is BERT?
+            • BERT (Bidirectional Encoder Representations from Transformers)
+                    • Developed by Google AI
+                    • Processes input sequences bidirectionally, enabling it to capture context from both directions
+                    • Pre-trained on tasks like Masked Language Modeling (MLM) and Next Sentence Prediction (NSP)
+            
+            • Key Features of BERT
+                • Bidirectional: Understands context from both left and right sides of a word
+                • Transformer Encoder-Based: Optimized for understanding input text
+                • Applications: Sentiment analysis, named entity recognition, question answering
+
+
+        • What is GPT?
+            • GPT (Generative Pretrained Transformer)
+                • Developed by OpenAI
+                • Processes input sequences unidirectionally (left-to-right), focusing on generative tasks
+                • Pre-trained using causal language modeling
+            
+            • Key Features of GPT
+                • Unidirectional: Processes text from left to right, focusing on text generation
+                • Transformer Decoder-Based: Optimized for generating coherent text
+                • Applications: Text generation, chatbots, summarization
+
+
+        Key Differences
+
+        Aspect                  BERT                    GPT
+
+        Architecture            Transformer Encoder     Transformer Decoder
+        Training Objective      MLM, NSP                Causal Language Modeling
+        Directionality          Bidirectional           Unidirectional
+        Use Cases               Understanding tasks     Generative tasks
+        Example                 Classification          Text generation
+
+        
+
+    Fine-Tuning Pre-Trained Models for Downstream Tasks
+        
+        • Why Fine-Tune?
+            • Pre-trained models are trained on large generic datasets
+            • Fine-tuning adapts them to specific tasks like sentiment analysis or classification
+        
+        • Steps to Fine-Tune
+            • Load a Pre-Trained Model
+                • Use libraries like Hugging Face to load a pre-trained BERT or GPT model
+            • Prepare Dataset
+                • Train and Evaluate
+            • Format the dataset for the specific task (e.g., tokenization for text classification)
+                • Fine-tune the model using task-specific data
