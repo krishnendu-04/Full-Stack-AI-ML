@@ -101,3 +101,57 @@
     Long-Term Dependencies      Handles long dependencies via attention             Struggles with long dependencies
     Position Information        Uses positional encodings                           Implicitly encodes position
     Architecture                Built on attention mechanisms; no recurrence        Sequential processing through hidden states
+
+
+
+
+
+
+*   SELF-ATTENTION AND MULTI-HEAD ATTENTION IN TRANSFORMERS   *
+
+
+
+    Self-Attention Mechanism
+        
+        • What is Self-Attention?
+            • Allows a model to dynamically focus on different parts of an input sequence when encoding a token
+            • It captures dependencies across all tokens in a sequence, enabling context-aware representations
+        
+        • Steps in Self-Attention
+            • Compute Attention Scores:
+                • Calculate dot products between the query ( 𝑄 ) and key ( 𝐾 ) vectors for all tokens
+                • Scale by the square root of the key dimension ( 𝑑𝑘 ) to stabilize gradients
+                • Apply the softmax function to convert scores into probabilities
+            • Weight Values
+                • Use the attention scores to compute a weighted sum of value ( 𝑉 ) vectors
+                    
+        • Attention(Q,K,V) = softmax((Q(K)^T)/root(dk))*V
+
+
+
+    Multi-Head Attention
+        
+        • What is Multi-Head Attention?
+            • Applies several attention mechanisms in parallel
+            • Each attention "head" focuses on different aspects of the sequence
+        • Steps
+            • Linear Projections
+                • Project 𝑄, 𝐾, and 𝑉 into multiple subspaces using learned weight matrices
+            • Apply Self-Attention
+                • Perform self-attention for each head independently
+            • Concatenate Outputs
+                • Combine outputs from all heads
+            • Final Linear Projection
+                • Project concatenated outputs back into the original dimension
+        
+        MultiHead ( 𝑄 , 𝐾 , 𝑉 ) = Concat ( head1 , head2 , . . . , headℎ ) 𝑊𝑂
+
+
+    
+    Applications of Multi-Head Attention in NLP
+        • Machine Translation
+            • Captures dependencies across languages for better translations
+        • Text Summarization
+            • Identifies key phrases to generate concise summaries
+        • Named Entity Recognition
+            • Focuses on contextual clues to detect entities in text
