@@ -155,3 +155,61 @@
             • Identifies key phrases to generate concise summaries
         • Named Entity Recognition
             • Focuses on contextual clues to detect entities in text
+
+
+
+
+
+
+
+*   POSITIONAL ENCODING AND FEED-FORWARD NETWORKS   *
+
+
+
+    Understanding the Role of Positional Encoding in Transformers
+        
+        • Why Positional Encoding?
+            • Unlike RNNs, Transformers do not process sequences sequentially
+            • They process all tokens in parallel
+            • Transformers lack inherent knowledge of token positions, which is crucial for tasks like translation or sequence modeling
+        
+        • What is Positional Encoding?
+            • Positional encoding introduces information about the order of tokens in a sequence
+            • It allows the model to differentiate between identical tokens in different positions.
+
+
+    Mathematical Foundation and Implementation of Positional Encoding
+        • Sinusoidal Positional Encoding
+            • Encodes positional information using sine and cosine functions
+            • Formula for positional encoding
+
+                            PE(pos, 2i) = sin(pos/(10000)^(2i/d))
+
+                            PE(pos, 2i+1) = cos(pos/(10000)^(2i/d))
+
+                            Where: 𝑝𝑜𝑠: Position of the token in the sequence
+                            𝑖: Index of the embedding dimension
+                            𝑑: Total embedding dimension
+
+        • Why Sinusoidal Functions?
+            • Provides unique encoding for each position.
+            • Allows generalization to longer sequences not seen during training
+
+
+        
+    The Feed-Forward Network
+        
+        • What is a Feed-Forward Network (FFN)?
+            • FFNs are fully connected layers applied to each token independently and identically within a Transformer layer
+            • Adds non-linear transformation to the output of the attention mechanism
+        
+        • Role in Transformers
+            • Captures token-specific transformations
+            • Enhances representational capacity
+        
+        • Structure
+            • Linear transformation
+            • Non-linear activation (e.g., ReLU)
+            • Another linear transformation
+                    
+                    𝐹𝐹𝑁 (𝑥) = ReLU ( 𝑥𝑊1 + 𝑏1 ) 𝑊2 + 𝑏2
