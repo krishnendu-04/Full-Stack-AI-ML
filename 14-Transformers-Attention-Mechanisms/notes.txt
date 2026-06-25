@@ -1,0 +1,41 @@
+*   ATTENTION MECHANISMS    *
+
+
+
+    Understanding the Limitations of RNNs and the Need for Attention
+        • Challenges of RNNs
+            • Sequential Processing
+            • Long-Term Dependency Problems
+            • Fixed Context Vector
+        • The Role of Attention Mechanisms
+            • Attention overcomes these limitations by allowing the model to focus on specific parts of the input sequence dynamically during each output generation step
+            • Instead of relying on a single context vector, attention provides a weighted combination of all input tokens relevant to the current output token
+
+
+    Basics of the Attention Mechanism
+        • Core Components
+            • Queries ( 𝑄 )
+                • Represents the current focus of the model (e.g., the current decoder state in Seq2Seq tasks)
+            • Keys ( 𝐾 )
+                • Encoded representations of the input sequence
+            • Values ( 𝑉 )
+                • Additional information associated with the keys.
+
+
+    • Attention Mechanism
+        • The attention score is computed using the dot product of the query and keys, followed by a softmax function to normalize into a probability distribution
+        • The weighted sum of the values forms the context vector
+                    
+                    Attention(Q,K,V) = softmax((Q(K)^T)/root(dk))*V
+
+
+
+    Types of Attention
+        • Self-Attention
+            • The query, key, and value all come from the same input sequence
+            • Widely used in Transformer models for learning interdependencies within a sequence
+        • Multi-Head Attention
+            • Extends self-attention by applying multiple attention mechanisms in parallel
+            • Captures different aspects of relationships in the sequence 
+                    MultiHead ( 𝑄 , 𝐾 , 𝑉 ) = Concat ( head1 , head2 , . . . , headℎ ) 𝑊^𝑂
+                    • where each head computes attention with different learned projections of 𝑄, 𝐾, and 𝑉
