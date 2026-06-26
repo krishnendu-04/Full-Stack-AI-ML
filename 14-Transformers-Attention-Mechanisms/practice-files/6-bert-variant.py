@@ -24,7 +24,7 @@ test_dataset = tokenized_datasets["test"]
 
 # Training arguments
 training_args = TrainingArguments(
-    output_dir="./results2",
+    output_dir="./results_bert_variant",
     eval_strategy="epoch",
     learning_rate=2e-5,
     per_device_train_batch_size=16,

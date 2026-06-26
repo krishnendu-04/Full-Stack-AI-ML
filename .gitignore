@@ -3,7 +3,7 @@ tf_env/
 __pycache__/
 *.pyc
 data
-catboost_info
+catboost_info/
 glove.6B.100d.txt
 logs
 results
