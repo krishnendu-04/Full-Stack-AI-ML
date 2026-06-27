@@ -1,0 +1,35 @@
+*   TRANSFER LEARNING   *
+
+
+    What is Transfer Learning?
+        • A machine learning technique where a model trained on one task is reused as a starting point for another related task
+        • Instead of training a model from scratch, pre-trained models are fine-tuned on a smaller dataset for a new task
+        
+        • How It Differs from Traditional Training:
+
+            ASPECT              Traditional Training                                    Transfer Learning
+            
+            Starting Point      Train from scratch using random weights                 Start with a pre-trained model
+            Training Time       Longer due to the need for learning basic features      Shorter as the model has already learned features
+            Dataset Size        Requires large datasets to perform well                 Can work well on small datasets
+
+    Benefits of Transfer Learning
+        • Reduced Training Time
+            • Pre-trained models already capture foundational features, so fewer epochs are needed
+        • Improved Performance on Small Datasets
+            • Transfer learning allows effective training even when data is limited
+        • Leverages Generalization
+            • Pre-trained models generalize better across tasks due to exposure to large-scale datasets
+
+    Applications of Transfer Learning
+        • In Computer Vision
+            • Pre-trained models like ResNet, VGG, Inception, EfficientNet are used for
+                • Object detection
+                • Image classification
+                • Image segmentation
+        • In NLP
+            • Models like BERT, GPT, T5 are fine-tuned for
+                • Text classification
+                • Sentiment analysis
+                • Named entity recognition
+                • Question answering
